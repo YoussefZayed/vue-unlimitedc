@@ -1,7 +1,20 @@
-const express = require('express')
-const serveStatic = require('serve-static')
-const path = require('path')
-const app = express()
-app.use('/', serveStatic(path.join(__dirname, '/dist')))
-const port = process.env.PORT || 8080
+var express = require('express')
+
+var path = require('path')
+
+var serveStatic = require('serve-static')
+
+
+
+var app = express()
+
+app.use(serveStatic(path.join(__dirname, 'dist')))
+
+
+
+var port = process.env.PORT || 8080
+
 app.listen(port)
+
+// eslint-disable-next-line no-console
+console.log('server started ' + port)
